@@ -23,7 +23,7 @@ class Format:
         """
         bytes_list = []
         megabyte = 1*10e+5
-        temp = self.Summar.summ_columns(df)
+        temp = self.summar.summ_columns(df)
         
         for i in range(temp.shape[0]):
             if(identifier in temp.iloc[i,0]):
