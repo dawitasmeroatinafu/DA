@@ -3,8 +3,8 @@
 from scripts.data_summry import Summery
 class Cleaner: 
 
-        def __init__(self) -> None:
-            self.summar = Summery() 
+    def __init__(self) -> None:
+        self.summar = Summery() 
 
     def fill_missing_by_mode(self, df, cols=None):
         """
