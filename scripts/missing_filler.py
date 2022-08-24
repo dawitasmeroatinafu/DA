@@ -1,3 +1,4 @@
+from data_summry import summ_columns;
 def fill_missing_by_mode(self, df, cols=None):
     """
     fills missing values by mode
