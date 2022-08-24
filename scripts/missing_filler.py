@@ -1,4 +1,4 @@
-from data_summry import summ_columns;
+from data_summry import Summery;
 class Cleaner: 
     def fill_missing_by_mode(self, df, cols=None):
         """
