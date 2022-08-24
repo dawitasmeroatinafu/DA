@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
-class summery:
-
+class Summery:
+    def _init(self) -> None:
+       pass
     def summ_columns(self, df, unique=True):
         """
         shows columns and their missing values along with data types.

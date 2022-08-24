@@ -1,5 +1,11 @@
-from data_summry import summery as summar
+
+
+from scripts.data_summry import Summery
 class Cleaner: 
+
+        def __init__(self) -> None:
+            self.summar = Summery() 
+
     def fill_missing_by_mode(self, df, cols=None):
         """
         fills missing values by mode
