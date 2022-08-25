@@ -1,3 +1,4 @@
+from itertools import groupby
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -28,8 +29,12 @@ class Summery:
             sns.displot(data=df, x=cols[index], color=colors[index], kde=True, height=4, aspect=2)
             plt.title(f'Distribution of'+cols[index]+ 'data volume', size=20, fontweight='bold')
             plt.show
-    def top_decile(self, df, dec, ):
-        df1=pd.qcut(df, dec)
-        return df1
-            
+    def top_decile(self, df, columnes_agg, range):
+        df['Decile']=pd.qcut(df['session duration'],10,labels=False )
+        data_agg=df.groupby(df['session duration']).aggregate(columnes_agg)
+        data_agg=data_agg.loc[data_agg['Decile']<range[1]+1]
+        data_agg=data_agg.loc[data_agg['Decile']<range[0]-1]
+        return data_agg
+
+        
     
