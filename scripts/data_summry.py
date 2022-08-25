@@ -28,6 +28,8 @@ class Summery:
             sns.displot(data=df, x=cols[index], color=colors[index], kde=True, height=4, aspect=2)
             plt.title(f'Distribution of'+cols[index]+ 'data volume', size=20, fontweight='bold')
             plt.show
-
+    def top_decile(self, df, dec, ):
+        df1=pd.qcut(df, dec)
+        return df1
             
     
