@@ -55,3 +55,11 @@ def plot_scatter(df: pd.DataFrame, x_col: str, y_col: str, title: str) -> None:
     plt.xticks(fontsize=14)
     plt.yticks( fontsize=14)
     plt.show()
+
+def plot_scattera(df:pd.DataFrame, x_col: str, y_col: str, hu: str, styl: str, title:str) -> None:
+    plt.figure(figsize=(12, 7))
+    sns.scatterplot(data = df, x=x_col, y=y_col,hue=hu, style=styl)
+    plt.title(title, size=20)
+    plt.xticks(fontsize=14)
+    plt.yticks( fontsize=14)
+    plt.show()
