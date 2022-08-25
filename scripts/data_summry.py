@@ -26,7 +26,7 @@ class Summery:
             plt.style.use('fivethirtyeight')
             plt.figure(figsize=(8,6))
             sns.displot(data=df, x=cols[index], color=colors[index], kde=True, height=4, aspect=2)
-            plt.title(f'Distribution of'+ cols(index)+ 'data volume', size=20, footweight='bold')
+            plt.title(f'Distribution of'+cols(index)+ 'data volume', size=20, footweight='bold')
             plt.show
 
             
