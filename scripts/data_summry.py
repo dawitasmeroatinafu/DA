@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 class Summery:
     def _init(self) -> None:
        pass
@@ -19,3 +21,13 @@ class Summery:
                 unique_val.append(len(pd.unique(df[df1.iloc[i,0]])))
             df1['unique_values'] = pd.Series(unique_val)
         return df1
+    def show_col_distribution(self, df, cols, colors):
+        for index in range(len(cols)):
+            plt.style.use('fivethirtyeight')
+            plt.figure(figsize=(8,6))
+            sns.displot(data=df, x=cols[index], color=colors[index], kde=True, height=4, aspect=2)
+            plt.title(f'Distribution of'+ cols(index)+ 'data volume', size=20, footweight='bold')
+            plt.show
+
+            
+    
