@@ -65,4 +65,3 @@ def plot_scattera(df:pd.DataFrame, x_col: str, y_col: str, hu: str, styl: str, t
     plt.show()
 
 
-    
