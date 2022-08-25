@@ -30,8 +30,8 @@ class Summery:
             plt.title(f'Distribution of'+cols[index]+ 'data volume', size=20, fontweight='bold')
             plt.show
     def top_decile(self, df, columnes_agg, range):
-        df['Decile']=pd.qcut(df['session duration'],10,labels=False )
-        data_agg=df.groupby(df['session duration']).aggregate(columnes_agg)
+        df['Decile']=pd.qcut(df['session_duration'],10,labels=False )
+        data_agg=df.groupby(df['session_duration']).aggregate(columnes_agg)
         data_agg=data_agg.loc[data_agg['Decile']<range[1]+1]
         data_agg=data_agg.loc[data_agg['Decile']<range[0]-1]
         return data_agg
