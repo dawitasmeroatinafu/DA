@@ -33,8 +33,8 @@ class Summery:
         df['Decile']=pd.qcut(df['session_duration'],10,labels=False )
         data_agg=df.groupby(df['session_duration']).aggregate(columnes_agg)
         data_agg=df.groupby(df['session_duration']).aggregate({'Decile':'sum'})
-        data_agg=data_agg.loc[data_agg['Decile']<range[1]+1]
-        data_agg=data_agg.loc[data_agg['Decile']<range[0]-1]
+        #data_agg=data_agg.loc[data_agg['Decile']<range[1]+1]
+        #data_agg=data_agg.loc[data_agg['Decile']<range[0]-1]
         return data_agg
 
         
