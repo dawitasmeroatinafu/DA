@@ -1,6 +1,7 @@
 import streamlit as st
 from multiapp import MultiApp
-from apps import user_engagement, user_experience, user_overview, user_satisfaction # import your app modules here
+from PIL import Image
+from images import * # import your app modules here
 
 app = MultiApp()
 
@@ -10,9 +11,19 @@ Before investing on a business it is a must to have best understanding about the
 """)
 
 # Add all your application here
-app.add_app("User Overview", user_overview.app)
-app.add_app("User Engagement", user_engagement.app)
-app.add_app("User Experience", user_experience.app)
-app.add_app("User Satisfaction", user_satisfaction.app)
-# The main app
+select_events=st.selectbox(label='Telecom data analysis', options=['user_overview analysis', 'user_engagement analysis', 'user_experience', 'user_satisfaction'])
+submitted=st.button('submit')
+
+if(select_events=='user_overview analysis'):
+    st.subheader("top 10 handsets")
+    image=Image.open('./images/top 10 handset.png')
+    st.subheader("top 3 hand set manufacturer")
+    image=Image.open('./images/handset manufacturer.PNG')
+
+if(select_events=='user_engagement analysis'):
+    st.subheader("top 3 apps customers engage with.PNG")
+    image=Image.open('./images/top 3 apps customers engage with.PNG')
+    st.subheader("maximum custermer engagement among 3 clusters")
+    image=Image.open('./images/maximum custermer engagement among 3 clusters.PNG')
+
 app.run()
